@@ -33,7 +33,7 @@
 }
 
 - (void)initView {
-    _vCycleLabel = [[CycleLabelView alloc] initWithFrame:CGRectMake(0, 300, self.view.frame.size.width, 100)];
+    _vCycleLabel = [[CycleLabelView alloc] initWithFrame:CGRectMake(0, 300, self.view.frame.size.width, 100) direction:_type==1?CycleLabelDirectionUp:CycleLabelDirectionDown];
     _vCycleLabel.delegate = self;
     [self.view addSubview:_vCycleLabel];
     

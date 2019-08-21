@@ -15,6 +15,11 @@
     [self.navigationController pushViewController:[CycleViewController new] animated:YES];
 }
 
+- (IBAction)pushCycleVC:(UIButton *)sender {
+    CycleViewController *vc = [CycleViewController new];
+    vc.type = (sender.tag==11)?1:2;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 
 @end

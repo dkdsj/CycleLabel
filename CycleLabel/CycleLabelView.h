@@ -10,6 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef enum : NSUInteger {
+    CycleLabelDirectionUp,
+    CycleLabelDirectionDown,
+} CycleLabelDirection;
+
 @protocol CycleLabelViewDelegate <NSObject>
 
 - (void)cycleLabelViewTapOnUILable:(NSInteger)index;
@@ -19,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CycleLabelView : UIView
 
+- (instancetype)initWithFrame:(CGRect)frame direction:(CycleLabelDirection)direction;
 - (void)cycleLabelViewTitles:(NSArray<NSString *> *)titles;
 
 @property (nonatomic, weak) id <CycleLabelViewDelegate> delegate;
